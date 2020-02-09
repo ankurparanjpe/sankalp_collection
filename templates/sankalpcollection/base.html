@@ -1,0 +1,219 @@
+<head>
+    {% load static %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Sankalp Collection</title>
+
+    <style>
+        header{
+        background: url(https://wallpapersite.com/images/pages/pic_h/3382.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 350px;
+        }
+     .section{
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+      }
+
+      .tabs .indicator{
+      background-color:#1a237e;
+      }
+      .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background-color: white;
+      }
+
+        @media screen and (max-width: 670px){
+        header{
+        min-height:500px;
+        }}
+        .carousel .carousel-item {
+        min-height: 400px;
+         width:400px; !important;}
+
+    </style>
+  <!-- navbar -->
+<header>
+<nav class="nav-wrapper transparent">
+  <div class="container">
+    <a href="/" class="brand-logo">Sankalp Collection</a>
+    <a href="#" class="sidenav-trigger" data-target="menu">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-mid-and-down">
+      <li><a href="https://www.instagram.com/immature_seed/" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Our insta page">
+        <i class="fab fa-instagram"></i>
+      </a></li>
+      <li><a href="https://www.facebook.com/ankzious" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Our Facebook page">
+        <i class="fab fa-facebook"></i>
+      </a></li>
+      <li><a href="/" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="+91 81091 75543">
+        <i class="fab fa-whatsapp"></i>
+      </a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <ul class="sidenav grey lighten-2" id="menu">
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+
+</head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+
+
+<!-- contact form -->
+<section class="section container scrollspy" id="contact">
+<div class="row">
+  <div class="col s12 l5">
+    <h2 class="blue-text">Get In Touch...</h2>
+    <p>Stay in touch to get all the updates or share your favourite articles. Share your experiences with us.</p>
+    <p>For more information, join us for amazing experience and wonderful journey.</p>
+  </div>
+  <div class="col s12 l5 offset-l2">
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+       onload="if(submitted) {window.location='#';}"></iframe>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfejTlUWgMMzz839w5N5jydETUZmw0M1ind2Sl4c2nmzanlqw/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+      <div class="input-field">
+        <i class="material-icons prefix">person</i>
+        <label>Name</label>
+        <input type="text" placeholder="Name" id="name" required name="entry.1801773996">
+      <div class="input-field">
+        <i class="material-icons prefix">local_phone</i>
+        <label>Phone</label>
+        <input type="text" placeholder="Phone" id="phone" required name="entry.36933764">
+      </div>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">perm_contact_calendar</i>
+        <input type="text" id="date" class="datepicker" placeholder="date" required name="entry.14115107">
+        <label for="date">Choose a date to get in touch.</label>
+      </div>
+        <div class="input-field center">
+            <button class="btn">Submit<i class="material-icons right">send</i></button></div>
+    </form>
+  </div>
+</div>
+</section>
+
+
+<!--advertisement for whitehats -->
+<div class="container">
+<div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="data:image/png;base64,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" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text"><h6><b><i>More services:</i></b><br></h6>
+                <i>Want your child to grow up to be a genius developer?</i> Give him the best early start with the <i>White hats</i> courses for your junior. Contact us on 8109175543 for more details.<br>
+                Or visit us on: <a href="https://code.whitehatjr.com/trial/register?ref=ANU984746">Official website</a> to know more.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+  <!-- footer -->
+<footer class="page-footer grey darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l6">
+        <h4>About us...</h4>
+        <p>We make all the products available via our online and offline platform.</p>
+        <p>Our goal is simply to bring the best product out there to you with the best and reasonable price.</p>
+        <p><i>Cheers!!!</i></p>
+      </div>
+      <div class="col s12 l4 offset-l2">
+        <h4>Connect with us...</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/ankzious" class="grey-text">Facebook</a></li>
+          <li><a href="https://www.instagram.com/immature_seed/" class="grey-text">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align">This website is powered by <a href="ankurparanjpe10@gmail.com">Ankur Paranjpe</a> </div>
+  </div>
+
+</footer>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.carousel').carousel();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.datepicker').datepicker({
+      disableWeekends: true
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+      $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+      });
+  </script>
+
+
+<script type="text/javascript">
+    function validateName() {
+            var name = document.getElementById('name').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+            }
+            return true;
+          }
+    function validatePhone() {
+            var phone = document.getElementById('phone').value;
+            if(phone.length == 0) {
+              alert("Phone number can't be blank") ;//Validation Message
+              return false;
+            }
+           return true;
+         }
+    function validateDate() {
+            var phone = document.getElementById('date').value;
+            if(date.length == 0) {
+              alert("Date field can't be blank") ;//Validation Message
+              return false;
+            }
+           return true;
+         }
+
+    function validateForm() {
+          if (!validateName() || !validatePhone() || !validateEmail()) {
+            alert("Form not submitted");//Validation Message
+            return false;
+          }
+          else {
+            submitted=true;
+            return true;
+          }
+        }
+</script>

@@ -1,0 +1,43 @@
+{% extends 'sankalpcollection/base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<body>
+<div class="container">
+    <h2 class="grey-text">Big discount on Men's fashion</h2>
+    <div class="row">
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="https://cdn.motor1.com/images/mgl/GNqnx/s3/most-expensive-cars-lead.jpg"></a>
+            <a class="carousel-item" href="#two!"><img src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/one-off/centenario/gallery/centenario.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="https://cdn.motor1.com/images/mgl/vAKQK/s3/ferrari-pricing-lead.jpg"></a>
+            <a class="carousel-item" href="#four!"><img src="https://i.ytimg.com/vi/w3nGCBPAn1I/maxresdefault.jpg"></a>
+            <a class="carousel-item" href="#five!"><img src="https://www.ford.com.au/content/dam/Ford/website-assets/ap/au/nameplate/mustang/mustang-gt-fastback-new/colorizer/race-red/mustang-gt-race-red.jpg.dam.full.high.jpg/1570103586393.jpg"></a>
+        </div>
+    </div>
+</div>
+
+<!--Here goes the categories of the articles-->
+
+<div class="container">
+<div class="row">
+        {% for cat in category %}
+        <div class="col s12 l6">
+            <div class="card">
+                    <div class="card-image">
+                    <img src="{{cat.category_image.url}}">
+                    </div>
+                <div class="card-content">
+                    <span class="card-title"><i>{{cat.category_title}}</i></span>
+                    <p>{{cat.description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{cat.category_link}}">See more articles like this</a>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+    </div>
+</div>
+
+</body>
+{% endblock %}
+

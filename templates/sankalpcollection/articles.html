@@ -1,0 +1,164 @@
+{% extends 'sankalpcollection/base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<script>
+    $(document).ready(function(){
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+      });
+</script>
+<style>
+    .carousel{
+    width: 700px  !important;}
+</style>
+<body>
+<div class="container">
+        <h2>{{category}}</h2>
+        {% for a in category.articles_set.all %}
+        <br>
+            <div class="row">
+                <div class="col" align="left">
+                    <div class="carousel carousel-slider">
+                        <a class="carousel-item"><img src="{{a.image.url}}"></a>
+                        <a class="carousel-item"><img src="{{a.image2.url}}"></a>
+                        <a class="carousel-item"><img src="{{a.image3.url}}"></a>
+                    </div>
+                </div>
+                <div class="col offset-1">
+                    <h4 class="indigo-text text-darken 4">{{a.name}}</h4>
+                    <b>
+                    <i>Description:
+                    </i>
+                    </b>
+                    {{a.description|safe}}
+                    <p><b>Price:  </b>{{a.price|safe}}</p>
+                    <a href="#interested" class="btn cyan modal-trigger">Interested</a>
+                    <div class="modal" id="interested">
+                        <div class="modal-content">
+                            <h5>Interested</h5>
+                            <p>For any type of questions or query for the article please contact the supplier from any contact details provided.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="modal-close btn cyan">Ok</a>
+                        </div>
+                    </div>
+                    <a href="#order" class="btn cyan modal-trigger">Order now</a>
+                    <div class="modal" id="order">
+                        <div class="modal-content">
+                            <h5>Order now</h5>
+                            <p>Please provide your Full name and address with phone number. Cash on delivery prefered option</p>
+                        </div>
+                        <div class="row">
+                            <!-- Here start our googledoc form filling -->
+                            <script type="text/javascript">var submitted=false;</script>
+                            <!--Update the URL for thank you page on form submit -->
+                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                                onload="if(submitted) {window.location='#';}"></iframe>
+                            <!-- Update the Google forms URL in action-->
+                            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfejTlUWgMMzz839w5N5jydETUZmw0M1ind2Sl4c2nmzanlqw/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+                                <div class="container">
+                                    <div>
+                                        <label>Article</label>
+                                        <input type="text" value="Name your article to order" placeholder="article" id="article" required name="entry.353714681">
+                                    </div>
+                                    <div>
+                                        <label>Name</label>
+                                        <input type="text" placeholder="Name" id="name" required name="entry.1801773996">
+                                    </div>
+                                    <div>
+                                        <label>Full address</label>
+                                        <input type="text" placeholder="address" id="address" required name="entry.1684688414">
+                                    </div>
+                                    <div>
+                                        <label>City</label>
+                                        <input type="text" placeholder="City" id="city" required name="entry.1077830678">
+                                    </div>
+                                    <div>
+                                        <label>Email</label>
+                                        <input type="text" placeholder="Email" id="email" required name="entry.2086163250">
+                                    </div>
+                                    <div>
+                                        <label>Phone</label>
+                                        <input type="text" placeholder="Phone" id="phone" required name="entry.36933764">
+                                    </div>
+                                    <div>
+                                        <button type="submit">SEND</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+</div>
+</body>
+
+<script type="text/javascript">
+    function validateArticle() {
+            var name = document.getElementById('article').value;
+            if(article.length == 0) {
+              alert("Article can't be blank") ;
+              return false;
+            }
+            return true;
+          }
+    function validateName() {
+            var name = document.getElementById('name').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+            }
+            return true;
+          }
+    function validateAddress() {
+            var name = document.getElementById('address').value;
+            if(address.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+            }
+            return true;
+          }
+    function validateCity() {
+            var name = document.getElementById('city').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+            }
+            return true;
+          }
+          function validatePhone() {
+            var phone = document.getElementById('phone').value;
+            if(phone.length == 0) {
+              alert("Phone number can't be blank") ;//Validation Message
+              return false;
+            }
+           return true;
+         }
+         function validateEmail () {
+          var email = document.getElementById('email').value;
+          if(email.length == 0) {
+            alert("Email can't be blank") ;//Validation Message
+            return false;
+          }
+          return true;
+        }
+
+    function validateForm() {
+          if (!validateName() || !validatePhone() || !validateEmail()) {
+            alert("Form not submitted");//Validation Message
+            return false;
+          }
+          else {
+            submitted=true;
+            return true;
+          }
+        }
+
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
+</script>
+{% endblock %}
